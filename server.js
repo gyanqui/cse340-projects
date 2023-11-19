@@ -6,14 +6,36 @@
  * Require Statements
  *************************/
 const express = require("express")
+const expressLayouts = require("express-ejs-layouts")
 const env = require("dotenv").config()
 const app = express()
 const static = require("./routes/static")
+const baseController = require("./controllers/baseController")
+const inventoryRoute = require("./routes/inventoryRoute")
+const Util = require("./utilities")
+
+
+/* ***********************
+ * View Engine and Templates
+ *************************/
+app.set("view engine", "ejs")
+app.use(expressLayouts)
+app.set("layout", "./layouts/layout") // not at views root
 
 /* ***********************
  * Routes
  *************************/
 app.use(static)
+//Index route
+app.get("/", baseController.buildHome)
+// Inventory routes
+app.use("/inv", inventoryRoute)
+
+/*********ALTER DATE TO BRING DATABATECONTROLLER*******/
+// No need to call it this way. We use localhost
+// app.get("/", function(req, res){
+//   res.render("index", {title:"Hello World!"})
+//   })
 
 /* ***********************
  * Local Server Information
@@ -27,4 +49,4 @@ const host = process.env.HOST
  *************************/
 app.listen(port, () => {
   console.log(`app listening on ${host}:${port}`)
-})
+  })
