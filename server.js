@@ -27,14 +27,10 @@ app.set("layout", "./layouts/layout") // not at views root
 app.use(static)
 //Index route
 app.get("/", baseController.buildHome)
+app.get("/500", utilities.handleErrors(baseController.buildErr500)) //Err 500 route
+
 // Inventory routes
 app.use("/inv", inventoryRoute)
-
-/*********ALTER DATE TO BRING DATABATECONTROLLER*******/
-// No need to call it this way. We use localhost
-// app.get("/", function(req, res){
-//   res.render("index", {title:"Hello World!"})
-//   })
 
 /* ***********************
  * Local Server Information
