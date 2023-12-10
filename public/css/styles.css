@@ -14,6 +14,12 @@
   padding: 10px 0 30px 0;
 }
 
+ul.notice {
+  padding: 10px 40px;
+  font-size: 1.5rem;
+  color: red;
+}
+
 .siteName {
   font-size: 2rem;
   text-align: left;
@@ -220,6 +226,51 @@ main h1 {
   border: 3px solid aqua;
 }
 
+  /******** Log in Page ********/
+
+  form#loginForm {
+    background-color: aqua;
+    padding: 20px;
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .data-box label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .data-box label span {
+    display: block;
+    margin-bottom: 5px;
+    font-family: "Rock Salt", sans-serif;
+    font-size: 0.9rem;
+  }
+
+  #loginForm button {
+    font-size: 1rem;
+    padding: 5px;
+  }
+
+  #registerForm {
+    background-color: aqua;
+    padding: 20px;
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .flash-message {
+    text-align: center;
+    color: black;
+    padding: 10px;
+    font-size: 1.1rem;
+  }
+
+  #registerForm button {
+    font-size: 1rem;
+    padding: 5px;
+  }
+
 /* LARGE VIEW STYLES */
 @media only screen and (min-width: 1300px) {
   html {
@@ -245,11 +296,6 @@ main h1 {
   nav ul li a {
     font-size: 1.8rem;
   }
-
-  /*******This goes to the nav**********/
-  /* ul.header-section {
-    padding: 20px 70px;
-  } */
 
   /* -------Body------ */
   .welcome-title {
@@ -367,12 +413,49 @@ main h1 {
     list-style-type: none;
     text-align: center;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
   }
   
   #inv-display li a img{
     width: auto;
-    height: 150px;
+    height: 200px;
   }
   
+  #inv-display li {
+    margin: 10px 60px;
+  }
+
+  /******** Log in Page ********/
+
+  form#loginForm{
+    font-size: 1.5rem;
+    line-height: 2.3rem;
+    margin: 0 400px;
+  }
+
+  .data-box label span {
+    font-size: 1.2rem;
+  }
+
+  #loginForm button {
+    font-size: 1.2rem;
+    margin: 10px 0;
+  }
+
+  #registerForm {
+    font-size: 1.5rem;
+    line-height: 2.3rem;
+    margin: 0 400px;
+  }
+
+  #registerForm button {
+    font-size: 1.2rem;
+    margin: 10px 0;
+  }
+
+  ul.notice li {
+    font-size: 1.5rem;
+  }
+
 }
